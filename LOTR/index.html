@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Balrog Game</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            position: relative; /* Umožňuje použití absolutního umístění pro nadpis */
+        }
+        #gameCanvas {
+            display: block;
+            margin: 0 auto;
+            position: relative;
+            top: 100px;
+            /* Nastav novou velikost canvasu */
+            width: 1200px; /* Nová šířka */
+            height: 800px; /* Nová výška */
+            z-index: 0; /* Ujisti se, že canvas je pod nadpisem */
+        }
+        #title {
+            position: absolute;
+            top: 20px; /* Umístění obrázku s textem */
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1; /* Ujisti se, že obrázek je nad canvas */
+            width: 300px; /* Změna šířky obrázku dle potřeby */
+            pointer-events: none; /* Ujisti se, že obrázek neinteraguje s herními událostmi */
+        }
+    </style>
+</head>
+<body>
+    <img id="title" src="images/title.png" alt="BALROG">
+    <canvas id="gameCanvas"></canvas>
+    <script src="game.js"></script>
+</body>
+</html>
